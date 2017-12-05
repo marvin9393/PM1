@@ -67,5 +67,9 @@ public class Rennauto {
     auto.ausgabe();
   }
   
+  public double getGefahreneStrecke() {
+    return gefahrenStrecke;
+  }
+  
   
 }
