@@ -14,5 +14,11 @@ package aufgabe4;
 public class Rennen {
   
   private int anzahlRennautos;
-  private 
+  private Rennauto[] listeDerRennautos;
+  private final double streckenLaenge;
+  
+  public Rennen(double streckenLaenge) {
+    this.streckenLaenge=streckenLaenge;
+    listeDerRennautos=new Rennauto[1];
+  }
 }
