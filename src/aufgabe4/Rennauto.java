@@ -41,13 +41,30 @@ public class Rennauto {
     this.fahrzeugtyp=fahrzeugtyp;
     this.maximaleGeschwindigkeit=maximaleGeschwindigkeit;
   }
-  
+  /**
+   * lässt das Auto mit einer Zufallsgeschwindigkeit fahren.
+   */
   public void fahren() {
     gefahrenStrecke=gefahrenStrecke+Math.random()*maximaleGeschwindigkeit;
   }
+  /**
+   * Gibt den Zustand in einem String zurück
+   */
   public String toString(){
-    String eigenschaften;
-    return eigenschaften;
+   return "Name des Fahrers:"+nameDesFahrers+"\nFahrzeugtyp:"+fahrzeugtyp
+       +"\nMaximaleGeschwindigkeit:"+maximaleGeschwindigkeit+"\nGefahrene Strecke:"+gefahrenStrecke;
+  }
+  /**
+   * Ausgabe um den Zustand des Autos auszugeben
+   */
+  public void ausgabe() {
+    System.out.println(toString());
+  }
+  
+  public static void main(String[] args) {
+    Rennauto auto=new Rennauto("Marvin", "Porsche Boxter", 350);
+    auto.fahren();
+    auto.ausgabe();
   }
   
   
