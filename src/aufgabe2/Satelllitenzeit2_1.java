@@ -11,7 +11,7 @@ import java.util.Scanner;
 * Praktikum TIPM2, WS16-17
 * Gruppe: Marvin Petersen (marvin.petersen@haw-hamburg.de),
 * Sahin Tekes (sahin.tekes@haw-hamburg.de)
-* Aufgabe: Aufgabenblatt xx, Aufgabe xx
+* Aufgabe: Aufgabenblatt 2, Aufgabe 2.1
 * Verwendete Quellen: */
 public class Satelllitenzeit2_1 {
   
