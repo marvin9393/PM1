@@ -71,5 +71,9 @@ public class Rennauto {
     return gefahrenStrecke;
   }
   
+  public String getName() {
+    return nameDesFahrers;
+  }
+  
   
 }

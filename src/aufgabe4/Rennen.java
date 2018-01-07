@@ -36,10 +36,9 @@ public class Rennen {
       anzahlRennautos++;
   }
   
-  private Rennauto ermittleSieger() {
+  public Rennauto ermittleSieger() {
     for(int i=0; i<anzahlRennautos;i++) {
       if(listeDerRennautos[i].getGefahreneStrecke()>streckenLaenge) {
-        listeDerRennautos[i].ausgabe();
         return listeDerRennautos[i];
       }
       
@@ -56,13 +55,17 @@ public class Rennen {
     while(ermittleSieger()==null) {
       schritt();
     }
+    ermittleSieger().ausgabe();
   }
   public static void main(String[] args) {
     Rennen rennen=new Rennen(1000.5);
-    Rennauto auto0=new Rennauto("Sahin", "Mercedes G-Klasse Wüstentan",230 );
-    Rennauto auto1=new Rennauto("Marvin", "BMW",230);
+    Rennauto auto0=new Rennauto("Marvin", "Mercedes G-Klasse Wüstentan",230 );
+    Rennauto auto1=new Rennauto("Sahin", "BMW",230);
     rennen.rennautoHinzufuegen(auto0);
     rennen.rennautoHinzufuegen(auto1);
     rennen.durchfuehren();
+    Wettbuero tipico = new Wettbuero(rennen, 1.5);
+    tipico.wetteAnnehmen("Sahin", 50, "Marvin");
+    tipico.auswerten();
   }
 }
