@@ -22,4 +22,6 @@ public class Person {
   public Adresse getAdresse() {
     return adresse;
   }
+  
+ 
 }

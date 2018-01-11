@@ -18,13 +18,17 @@ public abstract class Sendung {
   protected int startZeitpunkt;
   protected int transportDauer;
   protected static int sendungsnummerZaehler;
+  protected static int zeitpunkt;
   
-  public Sendung(Person sender, Person empfaenger, int sendungsnummer,
-      int startZeitpunkt) {
+  public Sendung(Person sender, Person empfaenger, int startZeitpunk,
+      int transportDauer) {
     this.sender=sender;
     this.empfaenger=empfaenger;
     this.sendungsnummer=sendungsnummer;
     this.startZeitpunkt=startZeitpunkt;
+    this.transportDauer=transportDauer;
+    sendungsnummerZaehler++;
+    sendungsnummer=sendungsnummerZaehler;
   }
   
   public int getSendungsnummer() {
@@ -41,12 +45,9 @@ public abstract class Sendung {
   
   public String toString() {
     StringBuilder result=new StringBuilder();
-    result.append("Sender: "+sender.getAdresse().getOrt());
-    result.append("\n Empfaenger: "+empfaenger.getAdresse().getOrt());
-    result.append("\n Sendungsnummer: "+sendungsnummer);
-    result.append("\n Startzeitpunkt: "+startZeitpunkt);
-    result.append("\nTransportdauer: "+transportDauer);
-    result.append("\nSendungungsnummer: "+sendungsnummer);
+    result.append(sender.getAdresse().getOrt().toString()+" -> "
+    +empfaenger.getAdresse().getOrt().toString()+"(start="
+        +startZeitpunkt+", dauer="+transportDauer+")");
     return result.toString();
   }
   public abstract boolean istAusgeliefert();
