@@ -11,8 +11,15 @@ package aufgabe6;
 * Sahin Tekes (sahin.tekes@haw-hamburg.de)
 * Aufgabe: Aufgabenblatt xx, Aufgabe xx
 * Verwendete Quellen: */
-public enum Stadt {
-  BERLIN, HAMBURG, MUENCHEN, KOELN, FRANKFURT, STUTTGART, DUESSELDORF,
-  DORTMUND, ESSEN, BREMEN
-
+public class Person {
+  
+  private Adresse adresse;
+  
+  public Person(Adresse adresse) {
+    this.adresse=adresse;
+  }
+  
+  public Adresse getAdresse() {
+    return adresse;
+  }
 }
