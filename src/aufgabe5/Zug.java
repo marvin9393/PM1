@@ -102,7 +102,6 @@ public class Zug {
       result+="\nSeriennummer des Wagens: "+hilfsWagen.getSerienNummer();
       result+="\nWagenlaenge: "+hilfsWagen.getlaenge()+" Meter";
       result+="\n Passagierkapazität: "+getKapazitaet();
-      hilfsWagen=hilfsWagen.getNaechstenWagen();
     }
     return result.toString();
   }
