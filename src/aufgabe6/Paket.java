@@ -10,14 +10,13 @@ package aufgabe6;
  * (marvin.petersen@haw-hamburg.de), Sahin Tekes (sahin.tekes@haw-hamburg.de)
  * Aufgabe: Aufgabenblatt xx, Aufgabe xx Verwendete Quellen:
  */
-public class Brief extends Sendung {
+public class Paket extends Sendung {
+  private double gewicht;
 
-  private boolean istEinschreiben;
-
-  public Brief(Person sender, Person empfaenger, int startZeitpunkt,
-      int sendungsDauer, boolean istEinschreiben) {
+  public Paket(Person sender, Person empfaenger, int startZeitpunkt,
+      int sendungsDauer, double gewicht) {
     super(sender, empfaenger, startZeitpunkt, sendungsDauer);
-    this.istEinschreiben = istEinschreiben;
+    this.gewicht=gewicht;
   }
 
 }

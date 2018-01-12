@@ -19,8 +19,10 @@ public abstract class Sendung {
   protected int transportDauer;
   protected static int sendungsnummerZaehler;
   protected static int zeitpunkt;
+  protected boolean istAusgeliefert;
+
   
-  public Sendung(Person sender, Person empfaenger, int startZeitpunk,
+  public Sendung(Person sender, Person empfaenger, int startZeitpunkt,
       int transportDauer) {
     this.sender=sender;
     this.empfaenger=empfaenger;
@@ -44,14 +46,29 @@ public abstract class Sendung {
   }
   
   public String toString() {
+    String paketOderBrief="";
+    if(this instanceof Brief) {
+      paketOderBrief="Brief ";
+    } else {
+      paketOderBrief="Paket ";
+    }
+
     StringBuilder result=new StringBuilder();
-    result.append(sender.getAdresse().getOrt().toString()+" -> "
+    result.append(paketOderBrief.toUpperCase()+sender.getAdresse().getOrt().toString()+" -> "
     +empfaenger.getAdresse().getOrt().toString()+"(start="
         +startZeitpunkt+", dauer="+transportDauer+")");
     return result.toString();
   }
-  public abstract boolean istAusgeliefert();
+  public boolean istAusgeliefert() {
+    if((zeitpunkt-startZeitpunkt)>=transportDauer) {
+      istAusgeliefert=true;
+    }else {
+      istAusgeliefert=false;
+    }
+    return istAusgeliefert;
+  }
   
-  public abstract void aktualisiereZeitpunkt();
-
+  public void aktualisiereZeitpunkt() {
+    zeitpunkt+=15;
+    }
 }
