@@ -13,8 +13,8 @@ package aufgabe7;
 * Verwendete Quellen: */
 public interface Funktion {
   
-  public double fVonX(double x);
+  public double f(double x);
   
-  public double ableitungFVonX(double x);
+  public double fStrich(double x);
 
 }

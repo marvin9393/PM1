@@ -12,21 +12,21 @@ package aufgabe7;
 * Aufgabe: Aufgabenblatt xx, Aufgabe xx
 * Verwendete Quellen: */
 public class Nullstellen {
+  
   private Funktion funktion;
+  private final double schwellWert =Math.pow(10, -5);
+  
   public Nullstellen(Funktion funktion) {
     this.funktion=funktion;
   }
-
-  private final double schwellWert=10^-5;
   
-  public double findeNullstelle(double startWert) {
-    double result=0;;
-    while(result>schwellWert) {
-      result=startWert-funktion.fVonX(startWert)/funktion.ableitungFVonX(startWert);
-      startWert++;
+  public double findeNullstellen(double startWert) {
+    while(funktion.f(startWert)>schwellWert) {
+      startWert=startWert-funktion.f(startWert)/funktion.fStrich(startWert);
     }
-    return result;
     
+    return startWert;
   }
+  
 
 }

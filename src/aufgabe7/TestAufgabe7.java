@@ -5,7 +5,8 @@
 */
 package aufgabe7;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,14 +16,13 @@ import org.junit.jupiter.api.Test;
 * Sahin Tekes (sahin.tekes@haw-hamburg.de)
 * Aufgabe: Aufgabenblatt xx, Aufgabe xx
 * Verwendete Quellen: */
-class Testeaufgabe7 {
+class TestAufgabe7 {
 
   @Test
-  void testAufgabe71() {
-    Funktion funktion=new QuadratischeFunktion(-1.0, 1.0, 0.0);
+  void testNullstellenberechnen() {
+    Funktion funktion =new QuadratischeFunktion(1, 0, -1);
     Nullstellen nullstellen=new Nullstellen(funktion);
-    nullstellen.findeNullstelle(0);
-    assertEquals(1,nullstellen.findeNullstelle(0),"Tst");
+    assertTrue("Fehler bei den Nullstellen", (int)nullstellen.findeNullstellen(2)==1);
   }
 
 }

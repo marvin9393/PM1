@@ -1,3 +1,8 @@
+/**
+*
+*
+*
+*/
 package aufgabe7;
 
 /**
@@ -7,24 +12,22 @@ package aufgabe7;
 * Aufgabe: Aufgabenblatt xx, Aufgabe xx
 * Verwendete Quellen: */
 public class QuadratischeFunktion implements Funktion{
-
   private double a;
   private double b;
   private double c;
   
-  public QuadratischeFunktion(double a, double b, double c) {
+  public QuadratischeFunktion(double a, double b, double c){
     this.a=a;
     this.b=b;
     this.c=c;
-  }
-  public double fVonX(double x) {
-    return a*(x*x)+b*x+c;
     
   }
-
- 
   
-  public double ableitungFVonX(double x) {
+  public double f(double x) {
+    return a*(x*x)+b*x+c;
+  }
+  
+  public double fStrich(double x) {
     return 2*a*x+b;
   }
 
