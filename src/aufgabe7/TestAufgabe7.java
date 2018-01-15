@@ -5,6 +5,7 @@
 */
 package aufgabe7;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,6 +24,27 @@ class TestAufgabe7 {
     Funktion funktion =new QuadratischeFunktion(1, 0, -1);
     Nullstellen nullstellen=new Nullstellen(funktion);
     assertTrue("Fehler bei den Nullstellen", (int)nullstellen.findeNullstellen(2)==1);
+  }
+  
+  @Test
+  void testNullstellenException() {
+    Funktion funktion =new QuadratischeFunktion(0, 0, 1);
+    Nullstellen nullstellen=new Nullstellen(funktion);
+    assertTrue("Fehler beim Fehler werfen Division durch 0", (int)nullstellen.findeNullstellen(0)==0);
+  }
+  
+  @Test
+  void testKeineKovergenzException() {
+    Funktion funktion =new QuadratischeFunktion(1, 0, 1);
+    Nullstellen nullstellen=new Nullstellen(funktion);
+    assertFalse("Fehler beim Fehler werfen Keine Konvergenz", (int)nullstellen.findeNullstellen(2)==0);
+  }
+  
+  @Test
+  void testRandomisiert() {
+    Funktion funktion =new QuadratischeFunktion(1, 0, -1);
+    Nullstellen nullstellen=new Nullstellen(funktion);
+    assertFalse("Fehler beim Fehler werfen Keine Konvergenz", nullstellen.findeNullstellenRandomisiert(-5, 5, 100).size()==2);
   }
 
 }
